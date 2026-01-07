@@ -1,0 +1,53 @@
+{
+	"$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
+	"extends": ["ultracite/biome/next"],
+	"files": {
+		"includes": ["src/**", "*.json", "*.mjs", "*.ts"]
+	},
+	"css": {
+		"parser": {
+			"cssModules": true,
+			"tailwindDirectives": true
+		}
+	},
+	"linter": {
+		"rules": {
+			"style": {
+				"noNonNullAssertion": "off",
+				"useTemplate": "off"
+			},
+			"suspicious": {
+				"noExplicitAny": "off",
+				"noArrayIndexKey": "off",
+				"useIterableCallbackReturn": "off"
+			},
+			"correctness": {
+				"noUnusedImports": "off",
+				"useExhaustiveDependencies": "off"
+			},
+			"a11y": {
+				"useButtonType": "off",
+				"noSvgWithoutTitle": "off",
+				"noStaticElementInteractions": "off",
+				"noInteractiveElementToNoninteractiveRole": "off",
+				"useSemanticElements": "off",
+				"noRedundantAlt": "off",
+				"useValidAnchor": "off",
+				"useKeyWithClickEvents": "off",
+				"useValidAriaRole": "off",
+				"useAriaPropsSupportedByRole": "off",
+				"useFocusableInteractive": "off",
+				"useAriaPropsForRole": "off",
+				"noLabelWithoutControl": "off"
+			},
+			"complexity": {
+				"useOptionalChain": "off",
+				"noImportantStyles": "off",
+				"noUselessTypeConstraint": "off"
+			},
+			"performance": {
+				"noImgElement": "off"
+			}
+		}
+	}
+}

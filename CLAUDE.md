@@ -9,12 +9,15 @@ Untitled UI Next.js starter kit - a React component library built with Next.js 1
 ## Commands
 
 ```bash
-bun dev      # Start dev server with Turbopack (localhost:3000)
-bun build    # Production build
-bun start    # Run production server
+bun dev       # Start dev server with Turbopack (localhost:3000)
+bun build     # Production build
+bun start     # Run production server
+bun lint      # Check for lint/format issues
+bun lint:fix  # Auto-fix lint/format issues
+bun format    # Format all files
 ```
 
-Formatting is handled automatically by Prettier on save. No separate lint command.
+Linting and formatting handled by Ultracite (Biome). Config in `biome.jsonc`.
 
 ## Architecture
 
@@ -58,9 +61,8 @@ Root layout (`src/app/layout.tsx`) wraps with:
 - `RouteProvider` - Router context
 - `Theme` - Dark/light mode via next-themes
 
-## Formatting Rules
+## Linting & Formatting
 
-Prettier config (`.prettierrc`):
-- 160 char width, 4-space tabs
-- Import order: react → react-dom → external → @/ → relative
-- Tailwind class sorting enabled for `cx` and `sortCx` functions
+Uses Ultracite with Biome (`biome.jsonc`):
+- Zero-config preset for Next.js
+- Run `bun lint:fix` to auto-fix issues
